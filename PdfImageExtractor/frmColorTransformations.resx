@@ -1,0 +1,1329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCancel.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>272, 465</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 33</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnOK.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>122, 465</value>
+  </data>
+  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 33</value>
+  </data>
+  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+    <value>btnOK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tbGamma.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbGamma.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 218</value>
+  </data>
+  <data name="tbGamma.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbGamma.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tbGamma.Name" xml:space="preserve">
+    <value>tbGamma</value>
+  </data>
+  <data name="&gt;&gt;tbGamma.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbGamma.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tbGamma.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudGamma.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 218</value>
+  </data>
+  <data name="nudGamma.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudGamma.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;nudGamma.Name" xml:space="preserve">
+    <value>nudGamma</value>
+  </data>
+  <data name="&gt;&gt;nudGamma.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudGamma.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;nudGamma.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="niceLine3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 188</value>
+  </data>
+  <data name="niceLine3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine3.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;niceLine3.Name" xml:space="preserve">
+    <value>niceLine3</value>
+  </data>
+  <data name="&gt;&gt;niceLine3.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine3.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;niceLine3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="niceLine2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 107</value>
+  </data>
+  <data name="niceLine2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine2.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;niceLine2.Name" xml:space="preserve">
+    <value>niceLine2</value>
+  </data>
+  <data name="&gt;&gt;niceLine2.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine2.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;niceLine2.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="niceLine1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 16</value>
+  </data>
+  <data name="niceLine1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine1.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;niceLine1.Name" xml:space="preserve">
+    <value>niceLine1</value>
+  </data>
+  <data name="&gt;&gt;niceLine1.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine1.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;niceLine1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tbContrast.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbContrast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 128</value>
+  </data>
+  <data name="tbContrast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbContrast.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tbContrast.Name" xml:space="preserve">
+    <value>tbContrast</value>
+  </data>
+  <data name="&gt;&gt;tbContrast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbContrast.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tbContrast.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="nudContrast.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 128</value>
+  </data>
+  <data name="nudContrast.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudContrast.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;nudContrast.Name" xml:space="preserve">
+    <value>nudContrast</value>
+  </data>
+  <data name="&gt;&gt;nudContrast.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudContrast.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;nudContrast.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tbBrightness.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbBrightness.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 49</value>
+  </data>
+  <data name="tbBrightness.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbBrightness.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbBrightness.Name" xml:space="preserve">
+    <value>tbBrightness</value>
+  </data>
+  <data name="&gt;&gt;tbBrightness.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbBrightness.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tbBrightness.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="nudBrightness.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 49</value>
+  </data>
+  <data name="nudBrightness.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudBrightness.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;nudBrightness.Name" xml:space="preserve">
+    <value>nudBrightness</value>
+  </data>
+  <data name="&gt;&gt;nudBrightness.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudBrightness.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;nudBrightness.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>577, 421</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Brightness,Contrast,Gamma</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbBlue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbBlue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 217</value>
+  </data>
+  <data name="tbBlue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbBlue.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tbBlue.Name" xml:space="preserve">
+    <value>tbBlue</value>
+  </data>
+  <data name="&gt;&gt;tbBlue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbBlue.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tbBlue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudBlue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 217</value>
+  </data>
+  <data name="nudBlue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudBlue.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;nudBlue.Name" xml:space="preserve">
+    <value>nudBlue</value>
+  </data>
+  <data name="&gt;&gt;nudBlue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudBlue.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;nudBlue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="niceLine4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 187</value>
+  </data>
+  <data name="niceLine4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine4.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;niceLine4.Name" xml:space="preserve">
+    <value>niceLine4</value>
+  </data>
+  <data name="&gt;&gt;niceLine4.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine4.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;niceLine4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="niceLine5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 106</value>
+  </data>
+  <data name="niceLine5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine5.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;niceLine5.Name" xml:space="preserve">
+    <value>niceLine5</value>
+  </data>
+  <data name="&gt;&gt;niceLine5.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine5.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;niceLine5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="niceLine6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 15</value>
+  </data>
+  <data name="niceLine6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine6.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;niceLine6.Name" xml:space="preserve">
+    <value>niceLine6</value>
+  </data>
+  <data name="&gt;&gt;niceLine6.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine6.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;niceLine6.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tbGreen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbGreen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 127</value>
+  </data>
+  <data name="tbGreen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbGreen.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tbGreen.Name" xml:space="preserve">
+    <value>tbGreen</value>
+  </data>
+  <data name="&gt;&gt;tbGreen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbGreen.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tbGreen.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="nudGreen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 127</value>
+  </data>
+  <data name="nudGreen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudGreen.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;nudGreen.Name" xml:space="preserve">
+    <value>nudGreen</value>
+  </data>
+  <data name="&gt;&gt;nudGreen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudGreen.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;nudGreen.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tbRed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbRed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 48</value>
+  </data>
+  <data name="tbRed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbRed.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbRed.Name" xml:space="preserve">
+    <value>tbRed</value>
+  </data>
+  <data name="&gt;&gt;tbRed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbRed.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tbRed.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="nudRed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>353, 48</value>
+  </data>
+  <data name="nudRed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudRed.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;nudRed.Name" xml:space="preserve">
+    <value>nudRed</value>
+  </data>
+  <data name="&gt;&gt;nudRed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudRed.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;nudRed.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>577, 421</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>RGB</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tbValue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 216</value>
+  </data>
+  <data name="tbValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbValue.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;tbValue.Name" xml:space="preserve">
+    <value>tbValue</value>
+  </data>
+  <data name="&gt;&gt;tbValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbValue.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;tbValue.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="nudValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>351, 216</value>
+  </data>
+  <data name="nudValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudValue.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;nudValue.Name" xml:space="preserve">
+    <value>nudValue</value>
+  </data>
+  <data name="&gt;&gt;nudValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudValue.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;nudValue.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="niceLine8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 186</value>
+  </data>
+  <data name="niceLine8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine8.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;niceLine8.Name" xml:space="preserve">
+    <value>niceLine8</value>
+  </data>
+  <data name="&gt;&gt;niceLine8.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine8.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;niceLine8.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="niceLine9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 105</value>
+  </data>
+  <data name="niceLine9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine9.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;niceLine9.Name" xml:space="preserve">
+    <value>niceLine9</value>
+  </data>
+  <data name="&gt;&gt;niceLine9.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine9.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;niceLine9.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="niceLine10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 14</value>
+  </data>
+  <data name="niceLine10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine10.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;niceLine10.Name" xml:space="preserve">
+    <value>niceLine10</value>
+  </data>
+  <data name="&gt;&gt;niceLine10.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine10.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;niceLine10.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tbSaturation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbSaturation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 126</value>
+  </data>
+  <data name="tbSaturation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbSaturation.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tbSaturation.Name" xml:space="preserve">
+    <value>tbSaturation</value>
+  </data>
+  <data name="&gt;&gt;tbSaturation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbSaturation.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;tbSaturation.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="nudSaturation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>351, 126</value>
+  </data>
+  <data name="nudSaturation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudSaturation.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;nudSaturation.Name" xml:space="preserve">
+    <value>nudSaturation</value>
+  </data>
+  <data name="&gt;&gt;nudSaturation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudSaturation.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;nudSaturation.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tbHue.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbHue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 47</value>
+  </data>
+  <data name="tbHue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbHue.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbHue.Name" xml:space="preserve">
+    <value>tbHue</value>
+  </data>
+  <data name="&gt;&gt;tbHue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbHue.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;tbHue.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="nudHue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>351, 47</value>
+  </data>
+  <data name="nudHue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudHue.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;nudHue.Name" xml:space="preserve">
+    <value>nudHue</value>
+  </data>
+  <data name="&gt;&gt;nudHue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudHue.Parent" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;nudHue.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tabPage3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>577, 421</value>
+  </data>
+  <data name="tabPage3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>HSV</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Name" xml:space="preserve">
+    <value>tabPage3</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="niceLine13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 165</value>
+  </data>
+  <data name="niceLine13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine13.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;niceLine13.Name" xml:space="preserve">
+    <value>niceLine13</value>
+  </data>
+  <data name="&gt;&gt;niceLine13.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine13.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;niceLine13.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbEmboss.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbEmboss.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 186</value>
+  </data>
+  <data name="tbEmboss.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbEmboss.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="&gt;&gt;tbEmboss.Name" xml:space="preserve">
+    <value>tbEmboss</value>
+  </data>
+  <data name="&gt;&gt;tbEmboss.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbEmboss.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tbEmboss.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="nudEmboss.Location" type="System.Drawing.Point, System.Drawing">
+    <value>347, 186</value>
+  </data>
+  <data name="nudEmboss.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudEmboss.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;nudEmboss.Name" xml:space="preserve">
+    <value>nudEmboss</value>
+  </data>
+  <data name="&gt;&gt;nudEmboss.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudEmboss.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;nudEmboss.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="niceLine12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 89</value>
+  </data>
+  <data name="niceLine12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine12.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;niceLine12.Name" xml:space="preserve">
+    <value>niceLine12</value>
+  </data>
+  <data name="&gt;&gt;niceLine12.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine12.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;niceLine12.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbBlur.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbBlur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 110</value>
+  </data>
+  <data name="tbBlur.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbBlur.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;tbBlur.Name" xml:space="preserve">
+    <value>tbBlur</value>
+  </data>
+  <data name="&gt;&gt;tbBlur.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbBlur.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tbBlur.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="nudBlur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>347, 110</value>
+  </data>
+  <data name="nudBlur.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudBlur.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="&gt;&gt;nudBlur.Name" xml:space="preserve">
+    <value>nudBlur</value>
+  </data>
+  <data name="&gt;&gt;nudBlur.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudBlur.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;nudBlur.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="niceLine11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 238</value>
+  </data>
+  <data name="niceLine11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine11.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;niceLine11.Name" xml:space="preserve">
+    <value>niceLine11</value>
+  </data>
+  <data name="&gt;&gt;niceLine11.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine11.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;niceLine11.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tbAlpha.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbAlpha.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 271</value>
+  </data>
+  <data name="tbAlpha.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbAlpha.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="&gt;&gt;tbAlpha.Name" xml:space="preserve">
+    <value>tbAlpha</value>
+  </data>
+  <data name="&gt;&gt;tbAlpha.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbAlpha.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tbAlpha.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="nudAlpha.Location" type="System.Drawing.Point, System.Drawing">
+    <value>347, 271</value>
+  </data>
+  <data name="nudAlpha.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudAlpha.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;nudAlpha.Name" xml:space="preserve">
+    <value>nudAlpha</value>
+  </data>
+  <data name="&gt;&gt;nudAlpha.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudAlpha.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;nudAlpha.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="chkSepia.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkSepia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 387</value>
+  </data>
+  <data name="chkSepia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 17</value>
+  </data>
+  <data name="chkSepia.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="chkSepia.Text" xml:space="preserve">
+    <value>Sepia</value>
+  </data>
+  <data name="&gt;&gt;chkSepia.Name" xml:space="preserve">
+    <value>chkSepia</value>
+  </data>
+  <data name="&gt;&gt;chkSepia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkSepia.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;chkSepia.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="chkNegative.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkNegative.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 364</value>
+  </data>
+  <data name="chkNegative.Size" type="System.Drawing.Size, System.Drawing">
+    <value>69, 17</value>
+  </data>
+  <data name="chkNegative.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="chkNegative.Text" xml:space="preserve">
+    <value>Negative</value>
+  </data>
+  <data name="&gt;&gt;chkNegative.Name" xml:space="preserve">
+    <value>chkNegative</value>
+  </data>
+  <data name="&gt;&gt;chkNegative.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkNegative.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;chkNegative.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="chkGrayscale.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkGrayscale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 341</value>
+  </data>
+  <data name="chkGrayscale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 17</value>
+  </data>
+  <data name="chkGrayscale.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="chkGrayscale.Text" xml:space="preserve">
+    <value>Grayscale</value>
+  </data>
+  <data name="&gt;&gt;chkGrayscale.Name" xml:space="preserve">
+    <value>chkGrayscale</value>
+  </data>
+  <data name="&gt;&gt;chkGrayscale.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkGrayscale.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;chkGrayscale.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="niceLine7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 19</value>
+  </data>
+  <data name="niceLine7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 15</value>
+  </data>
+  <data name="niceLine7.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;niceLine7.Name" xml:space="preserve">
+    <value>niceLine7</value>
+  </data>
+  <data name="&gt;&gt;niceLine7.Type" xml:space="preserve">
+    <value>PdfImageExtractor.NiceLine, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;niceLine7.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;niceLine7.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="tbSharpen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="tbSharpen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>27, 38</value>
+  </data>
+  <data name="tbSharpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 45</value>
+  </data>
+  <data name="tbSharpen.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbSharpen.Name" xml:space="preserve">
+    <value>tbSharpen</value>
+  </data>
+  <data name="&gt;&gt;tbSharpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbSharpen.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tbSharpen.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="nudSharpen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>347, 38</value>
+  </data>
+  <data name="nudSharpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 20</value>
+  </data>
+  <data name="nudSharpen.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;nudSharpen.Name" xml:space="preserve">
+    <value>nudSharpen</value>
+  </data>
+  <data name="&gt;&gt;nudSharpen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nudSharpen.Parent" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;nudSharpen.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="tabPage4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPage4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>577, 421</value>
+  </data>
+  <data name="tabPage4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPage4.Text" xml:space="preserve">
+    <value>Misc</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Name" xml:space="preserve">
+    <value>tabPage4</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 12</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>585, 447</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnOpenPreview.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnOpenPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>710, 306</value>
+  </data>
+  <data name="btnOpenPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 26</value>
+  </data>
+  <data name="btnOpenPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="btnOpenPreview.Text" xml:space="preserve">
+    <value>Open Preview</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPreview.Name" xml:space="preserve">
+    <value>btnOpenPreview</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPreview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPreview.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnOpenPreview.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="picPreview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 31</value>
+  </data>
+  <data name="picPreview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>256, 194</value>
+  </data>
+  <data name="picPreview.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;picPreview.Name" xml:space="preserve">
+    <value>picPreview</value>
+  </data>
+  <data name="&gt;&gt;picPreview.Type" xml:space="preserve">
+    <value>PdfImageExtractor.PreviewPic, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;picPreview.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;picPreview.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>610, 34</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>317, 254</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>939, 510</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Adjustments</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmColorTransformations</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>PdfImageExtractor.CustomForm, PdfImageExtractor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+</root>
