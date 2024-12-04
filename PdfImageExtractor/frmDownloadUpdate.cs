@@ -74,7 +74,7 @@ namespace PdfImageExtractor
 
                 try
                 {
-                    System.Diagnostics.Process.Start(DownloadFile);
+                    System.Diagnostics.Process.Start(DownloadFile,"/S");
 
                     Environment.Exit(0);
                 }
@@ -112,7 +112,7 @@ namespace PdfImageExtractor
 
                 string program = durl.Substring(spos + 1);
 
-                return "http://www.4dots-software.com/downloads/" + program + "Setup.exe";
+                return "http://softpcapps.com/downloads/" + program + "Setup.exe";
             }
             else
             {

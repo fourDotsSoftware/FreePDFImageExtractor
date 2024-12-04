@@ -14,16 +14,16 @@ namespace PdfImageExtractor
         public static String imgmona_filepath = Application.StartupPath + "\\mona_portrait.jpg";
         public static String previewFromPagePath = imgmona_filepath;
 
-        public static string ApplicationTitle = "Free PDF Image Extractor 4dots V2.7 - 4dots Software";
-        public static string ShortApplicationTitle = "Free PDF Image Extractor 4dots V2.7";
+        public static string ApplicationTitle = "Free PDF Image Extractor 4dots V3.0 - softpcapps Software";
+        public static string ShortApplicationTitle = "Free PDF Image Extractor 4dots V3.0";
 
         public static string StoreUrl = "http://www.pdfdocmerge.com/store/";
         public static string SelectedLanguage = "en-US";
 
-        public static string DownloadURL = "https://www.4dots-software.com/d/FreePDFImageExtractor/";
-        public static string HelpURL = "https://www.4dots-software.com/free-pdf-image-extractor/how-to-use.php";
-        public static string ProductWebpageURL = "https://www.4dots-software.com/free-pdf-image-extractor/";
-        //public static string BuyURL = "https://www.4dots-software.com/store/buy-mp3-joiner-expert.php";
+        public static string DownloadURL = "https://softpcapps.com/d/FreePDFImageExtractor/";
+        public static string HelpURL = "https://softpcapps.com/free-pdf-image-extractor/how-to-use.php";
+        public static string ProductWebpageURL = "https://softpcapps.com/free-pdf-image-extractor/";
+        //public static string BuyURL = "https://softpcapps.com/store/buy-mp3-joiner-expert.php";
         public static string VersionURL = "http://cssspritestool.com/versions/free-pdf-image-extractor.txt";
 
         public static string TipText = "Great application to Extract Images from PDF Documents !";

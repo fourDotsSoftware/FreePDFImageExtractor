@@ -96,7 +96,7 @@ namespace PdfImageExtractor
                 fq.ShowDialog();
                 */
 
-                System.Diagnostics.Process.Start("https://www.4dots-software.com/support/bugfeature.php?uninstall=true&app=" + System.Web.HttpUtility.UrlEncode(Module.ShortApplicationTitle));
+                System.Diagnostics.Process.Start("https://softpcapps.com/support/bugfeature.php?uninstall=true&app=" + System.Web.HttpUtility.UrlEncode(Module.ShortApplicationTitle));
 
                 return;
                 Environment.Exit(0);
@@ -222,11 +222,11 @@ namespace PdfImageExtractor
 
             try
             {
-                key = key.OpenSubKey("Software\\4dots Software", true);
+                key = key.OpenSubKey("Software\\softpcapps Software", true);
 
                 if (key == null)
                 {
-                    key = Registry.CurrentUser.CreateSubKey("SOFTWARE\\4dots Software");
+                    key = Registry.CurrentUser.CreateSubKey("SOFTWARE\\softpcapps Software");
                 }
 
                 key2 = key.OpenSubKey("PDF Image Extractor", true);

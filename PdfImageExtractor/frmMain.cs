@@ -36,6 +36,7 @@ namespace PdfImageExtractor
         public frmMain()
         {
             InitializeComponent();
+
             rdDocumentsFolder.Text = Module.UserDocumentsFolder;
             dgFiles.AutoGenerateColumns = false;
 
@@ -49,13 +50,12 @@ namespace PdfImageExtractor
 
             Instance = this;
 
-            if (Module.IsCommandLine)
+            if (Module.IsCommandLine || Module.IsFromWindowsExplorer)
             {
                 this.Visible = false;
                 this.ShowInTaskbar = false;
             }
-
-            if (Properties.Settings.Default.ShowPromotion)
+            else  if (Properties.Settings.Default.ShowPromotion)
             {
                 frmPromotion fp = new frmPromotion();
                 fp.Show(this);
@@ -113,27 +113,53 @@ namespace PdfImageExtractor
             }
         }
 
-        private void SetupOnLoad()
+        bool FreeForPersonalUse = false;
+        bool FreeForPersonalAndCommercialUse = true;
+
+        private void SetTitle()
         {
+            string str = "";
+
+            if (!FreeForPersonalUse && !FreeForPersonalAndCommercialUse)
+            {
+                /*
+                if (frmAbout.LDT == string.Empty)
+                {
+                    str += " - " + TranslateHelper.Translate("Trial Version - Unlicensed - Please Buy !");
+                }
+                else
+                {
+                    str += " - " + TranslateHelper.Translate("Licensed Version");
+                }*/
+            }
+            else if (FreeForPersonalUse)
+            {
+                str += " - " + TranslateHelper.Translate("Free for Personal Use Only - Please Donate !");
+            }
+            else if (FreeForPersonalAndCommercialUse)
+            {
+                str += " - " + TranslateHelper.Translate("Free for Personal and Commercial Use - Please Donate !");
+            }
+
+            this.Text = Module.ApplicationTitle + str.ToUpper();
+        }
+
+        private void SetupOnLoad()
+        {            
             this.Text = Module.ApplicationTitle;
+
+            SetTitle();
+
             this.Width = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width;
             this.Left = 0;
-            AddLanguageMenuItems();                     
-
-            if (ArgsHelper.FromWindowsExplorer)
-            {
-                AddVisual(Module.args);
-            }
+            AddLanguageMenuItems();                                 
 
             lblExplanation.Text = "[PAGENUM] : " + TranslateHelper.Translate("Page Number") + "\r\n" +
                 "[NUM] : " + TranslateHelper.Translate("Number of Image") + "\r\n" +
                 "[FILETYPE] : " + TranslateHelper.Translate("Image File Type") + "\r\n" +
                 "[FILENAME] : " + TranslateHelper.Translate("Filename of Pdf File");
                // "[FULLPATH] : " + TranslateHelper.Translate("Full Path of Pdf File");
-
-            DownloadSuggestionsHelper ds = new DownloadSuggestionsHelper();
-            ds.SetupDownloadMenuItems(downloadToolStripMenuItem);
-
+                           
             keepFolderStructureToolStripMenuItem.Checked = Properties.Settings.Default.KeepFolderStructure;
 
             if (Properties.Settings.Default.DocumentOutputFolder != string.Empty)
@@ -170,7 +196,9 @@ namespace PdfImageExtractor
                 Properties.Settings.Default.KeepLastModificationDate;
 
             showMessageOnSucessToolStripMenuItem.Checked =
-                Properties.Settings.Default.ShowMessageOnSucess;            
+                Properties.Settings.Default.ShowMessageOnSucess;
+
+            saveOnlyUniqueImagesToolStripMenuItem.Checked = Properties.Settings.Default.SaveOnlyUniqueImages;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -179,12 +207,24 @@ namespace PdfImageExtractor
 
             SetupOnLoad();
 
-            if (Properties.Settings.Default.CheckWeek)
+            if (!Module.IsCommandLine && !Module.IsFromWindowsExplorer)
             {
-                UpdateHelper.InitializeCheckVersionWeek();
+                if (Properties.Settings.Default.CheckWeek)
+                {
+                    UpdateHelper.InitializeCheckVersionWeek();
+                }
             }
 
             ResizeControls();
+
+            if (ArgsHelper.FromWindowsExplorer)
+            {
+                AddVisual(Module.args);
+
+                btnExtractImages_Click(null, null);
+
+                Environment.Exit(0);
+            }
         }
 
         #region Localization
@@ -233,7 +273,7 @@ namespace PdfImageExtractor
             RegistryKey key = Registry.CurrentUser;
             try
             {
-                key = key.OpenSubKey("SOFTWARE\\4dots Software\\PDF Image Extractor", true);
+                key = key.OpenSubKey("SOFTWARE\\softpcapps Software\\PDF Image Extractor", true);
 
                 key.SetValue("Language", language_code);
                 Program.SetLanguage();
@@ -430,7 +470,7 @@ namespace PdfImageExtractor
             f.ShowDialog();
             */
 
-            System.Diagnostics.Process.Start("https://www.4dots-software.com/support/bugfeature.php?app=" + System.Web.HttpUtility.UrlEncode(Module.ShortApplicationTitle));
+            System.Diagnostics.Process.Start("https://softpcapps.com/support/bugfeature.php?app=" + System.Web.HttpUtility.UrlEncode(Module.ShortApplicationTitle));
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -594,7 +634,7 @@ namespace PdfImageExtractor
             
         }
 
-        private void btnEncrypt_Click(object sender, EventArgs e)
+        private void btnExtractImages_Click(object sender, EventArgs e)
         {            
             try
             {
@@ -607,6 +647,8 @@ namespace PdfImageExtractor
                 Properties.Settings.Default.KeepLastModificationDate = keepLastModificationDateToolStripMenuItem.Checked;
 
                 Properties.Settings.Default.ShowMessageOnSucess = showMessageOnSucessToolStripMenuItem.Checked;
+
+                Properties.Settings.Default.SaveOnlyUniqueImages = saveOnlyUniqueImagesToolStripMenuItem.Checked;
 
                 dgFiles.EndEdit();
 
@@ -664,9 +706,12 @@ namespace PdfImageExtractor
                         Module.ShowMessage("Operation completed successfully !");
                     }
 
-                    if (Properties.Settings.Default.ExploreOutputFolder)
+                    if (!Module.IsFromWindowsExplorer)
                     {
-                        btnOpenFolder_Click(null, null);
+                        if (Properties.Settings.Default.ExploreOutputFolder)
+                        {
+                            btnOpenFolder_Click(null, null);
+                        }
                     }
                 }
                 else
@@ -771,38 +816,38 @@ namespace PdfImageExtractor
 
         private void downloadFreeImagemapperToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.4dots-software.com/imagemapper2/");
+            System.Diagnostics.Process.Start("http://softpcapps.com/imagemapper2/");
         }
 
         private void downloadCopyPathToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.4dots-software.com/copypathtoclipboard/");
+            System.Diagnostics.Process.Start("http://softpcapps.com/copypathtoclipboard/");
         }
 
         private void downloadCopyTextContentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.4dots-software.com/copytextcontents/");
+            System.Diagnostics.Process.Start("http://softpcapps.com/copytextcontents/");
         }
 
         private void downloadOpenCommandPromptHereToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.4dots-software.com/open_command_prompt_here/");
+            System.Diagnostics.Process.Start("http://softpcapps.com/open_command_prompt_here/");
         }
 
         private void downloadFreeColorwheelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.4dots-software.com/colorwheel/");
+            System.Diagnostics.Process.Start("http://softpcapps.com/colorwheel/");
         }
 
         private void visit4dotsSoftwareWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.4dots-software.com");
+            System.Diagnostics.Process.Start("https://softpcapps.com");
         }
 
 
         private void downloadDocusTreeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.4dots-software.com/freedocustree/");
+            System.Diagnostics.Process.Start("http://softpcapps.com/freedocustree/");
         }               
 
         private void btnOpenFolder_Click(object sender, EventArgs e)
@@ -932,7 +977,9 @@ namespace PdfImageExtractor
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            Err = ImagesExtractorHelper.ExtractImages(dt,rdDocumentsFolderChecked, rdDocumentsFolderText, chkFormatChecked, SelectedFormat, txtFilenameText);                                   
+            //3Err = ImagesExtractorHelper.ExtractImages(dt,rdDocumentsFolderChecked, rdDocumentsFolderText, chkFormatChecked, SelectedFormat, txtFilenameText);
+
+            Err = PdfiumImageExtractor.ExtractImages(dt, rdDocumentsFolderChecked, rdDocumentsFolderText, chkFormatChecked, SelectedFormat, txtFilenameText);
         }
 
         private void dgFiles_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -1106,12 +1153,12 @@ namespace PdfImageExtractor
 
         private void pleaseDonateToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.4dots-software.com/donate.php");
+            System.Diagnostics.Process.Start("http://softpcapps.com/donate.php");
         }
 
         private void dotsSoftwarePRODUCTCATALOGToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://www.4dots-software.com/downloads/4dots-Software-PRODUCT-CATALOG.pdf");
+            System.Diagnostics.Process.Start("http://softpcapps.com/downloads/4dots-Software-PRODUCT-CATALOG.pdf");
         }
 
         private void btnImportList_Click(object sender, EventArgs e)
@@ -1145,6 +1192,18 @@ namespace PdfImageExtractor
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (e.CloseReason != CloseReason.WindowsShutDown)
+            {
+                DialogResult dres = Module.ShowQuestionDialog(TranslateHelper.Translate("Are you sure that you want to exit the application ?"),
+        Module.ApplicationTitle);
+
+                if (dres != DialogResult.Yes)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            }
+
             Properties.Settings.Default.OutputRadioIndex = rdSameFolder.Checked ? 0 : 1;
 
             Properties.Settings.Default.FilenamePattern = txtFilename.Text;
@@ -1159,7 +1218,9 @@ namespace PdfImageExtractor
 
             Properties.Settings.Default.KeepLastModificationDate = keepLastModificationDateToolStripMenuItem.Checked;
 
-            Properties.Settings.Default.ShowMessageOnSucess = showMessageOnSucessToolStripMenuItem.Checked;                
+            Properties.Settings.Default.ShowMessageOnSucess = showMessageOnSucessToolStripMenuItem.Checked;
+
+            Properties.Settings.Default.SaveOnlyUniqueImages = saveOnlyUniqueImagesToolStripMenuItem.Checked;
 
             Properties.Settings.Default.Save();
         }
@@ -1482,6 +1543,11 @@ namespace PdfImageExtractor
         {
             frmMessage fm = new frmMessage(true);
             fm.ShowDialog(this);
+        }
+
+        private void saveOnlyUniqueImagesToolStripMenuItem_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.SaveOnlyUniqueImages = saveOnlyUniqueImagesToolStripMenuItem.Checked;
         }
     }
 }

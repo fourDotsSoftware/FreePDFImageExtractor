@@ -333,9 +333,9 @@ namespace PdfImageExtractor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static System.Drawing.Icon pdf_image_extractor {
+        internal static System.Drawing.Icon pdf_photo_48 {
             get {
-                object obj = ResourceManager.GetObject("pdf_image_extractor", resourceCulture);
+                object obj = ResourceManager.GetObject("pdf_photo_48", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

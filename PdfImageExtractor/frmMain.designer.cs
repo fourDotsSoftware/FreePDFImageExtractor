@@ -30,8 +30,8 @@ namespace PdfImageExtractor
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +62,7 @@ namespace PdfImageExtractor
             this.showMessageOnSucessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.extractImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.downloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.downloadSoftwareToolStripMenuItem = new com.softpcapps.download_software.DownloadSoftwareToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpGuideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -145,6 +144,7 @@ namespace PdfImageExtractor
             this.tsiEmail = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbConvert = new System.Windows.Forms.ToolStripButton();
+            this.saveOnlyUniqueImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgFiles)).BeginInit();
@@ -189,7 +189,7 @@ namespace PdfImageExtractor
             this.editToolStripMenuItem,
             this.optionsToolStripMenuItem,
             this.toolsToolStripMenuItem,
-            this.downloadToolStripMenuItem,
+            this.downloadSoftwareToolStripMenuItem,
             this.languageToolStripMenuItem,
             this.helpToolStripMenuItem});
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
@@ -323,7 +323,8 @@ namespace PdfImageExtractor
             this.exploreOutputFolderWhenDoneToolStripMenuItem,
             this.keepCreationDateToolStripMenuItem,
             this.keepLastModificationDateToolStripMenuItem,
-            this.showMessageOnSucessToolStripMenuItem});
+            this.showMessageOnSucessToolStripMenuItem,
+            this.saveOnlyUniqueImagesToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             resources.ApplyResources(this.optionsToolStripMenuItem, "optionsToolStripMenuItem");
             // 
@@ -368,19 +369,12 @@ namespace PdfImageExtractor
             // 
             this.extractImagesToolStripMenuItem.Name = "extractImagesToolStripMenuItem";
             resources.ApplyResources(this.extractImagesToolStripMenuItem, "extractImagesToolStripMenuItem");
-            this.extractImagesToolStripMenuItem.Click += new System.EventHandler(this.btnEncrypt_Click);
+            this.extractImagesToolStripMenuItem.Click += new System.EventHandler(this.btnExtractImages_Click);
             // 
-            // downloadToolStripMenuItem
+            // downloadSoftwareToolStripMenuItem
             // 
-            this.downloadToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2});
-            this.downloadToolStripMenuItem.Name = "downloadToolStripMenuItem";
-            resources.ApplyResources(this.downloadToolStripMenuItem, "downloadToolStripMenuItem");
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            this.downloadSoftwareToolStripMenuItem.Name = "downloadSoftwareToolStripMenuItem";
+            resources.ApplyResources(this.downloadSoftwareToolStripMenuItem, "downloadSoftwareToolStripMenuItem");
             // 
             // languageToolStripMenuItem
             // 
@@ -503,14 +497,14 @@ namespace PdfImageExtractor
             this.colPassword,
             this.colFileDate,
             this.colFullFilePath});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgFiles.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(231)))), ((int)(((byte)(228)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgFiles.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgFiles.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgFiles.GridColor = System.Drawing.Color.Black;
             this.dgFiles.Name = "dgFiles";
@@ -551,8 +545,8 @@ namespace PdfImageExtractor
             // colPassword
             // 
             this.colPassword.DataPropertyName = "password";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.colPassword.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.colPassword.DefaultCellStyle = dataGridViewCellStyle5;
             resources.ApplyResources(this.colPassword, "colPassword");
             this.colPassword.Name = "colPassword";
             // 
@@ -989,7 +983,14 @@ namespace PdfImageExtractor
             this.tsbConvert.ForeColor = System.Drawing.Color.DarkBlue;
             this.tsbConvert.Image = global::PdfImageExtractor.Properties.Resources.flash1;
             this.tsbConvert.Name = "tsbConvert";
-            this.tsbConvert.Click += new System.EventHandler(this.btnEncrypt_Click);
+            this.tsbConvert.Click += new System.EventHandler(this.btnExtractImages_Click);
+            // 
+            // saveOnlyUniqueImagesToolStripMenuItem
+            // 
+            this.saveOnlyUniqueImagesToolStripMenuItem.CheckOnClick = true;
+            this.saveOnlyUniqueImagesToolStripMenuItem.Name = "saveOnlyUniqueImagesToolStripMenuItem";
+            resources.ApplyResources(this.saveOnlyUniqueImagesToolStripMenuItem, "saveOnlyUniqueImagesToolStripMenuItem");
+            this.saveOnlyUniqueImagesToolStripMenuItem.CheckedChanged += new System.EventHandler(this.saveOnlyUniqueImagesToolStripMenuItem_CheckedChanged);
             // 
             // frmMain
             // 
@@ -1041,7 +1042,6 @@ namespace PdfImageExtractor
         private System.Windows.Forms.ToolStripMenuItem duplicateToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.DataGridView dgFiles;
-        private System.Windows.Forms.ToolStripMenuItem downloadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visit4dotsSoftwareWebsiteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
         private System.Windows.Forms.Button btnOpenFolder;
@@ -1090,7 +1090,6 @@ namespace PdfImageExtractor
         private System.Windows.Forms.DataGridViewTextBoxColumn colPassword;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFileDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFullFilePath;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem pleaseDonateToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem dotsSoftwarePRODUCTCATALOGToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
@@ -1138,5 +1137,7 @@ namespace PdfImageExtractor
         private System.Windows.Forms.ToolStripMenuItem extractImagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tryOnlineVersionAtOnlinepdfappscomToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commandLineArgumentsToolStripMenuItem;
+        private com.softpcapps.download_software.DownloadSoftwareToolStripMenuItem downloadSoftwareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveOnlyUniqueImagesToolStripMenuItem;
     }
 }

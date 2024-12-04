@@ -19,11 +19,16 @@ namespace PdfImageExtractor
 
         public static string ExtractImages(DataTable dt, bool rdDocumentsFolder, string rdDocumentsFolderText, bool chkFormat, int SelectedFormat, string txtFilename)
         {
-            string err = "";
+            string err = "";            
 
             for (int k = 0; k < dt.Rows.Count; k++)
             {
-                if (frmMain.Instance.OperationCancelled) return err;
+                if (frmMain.Instance.OperationCancelled)
+                {
+                    ImagesExtractorHelper.uniqueImageSaver.ClearAfterUse();
+
+                    return err;
+                }
 
                 lstAddImages = new List<Image>();
 
@@ -32,6 +37,8 @@ namespace PdfImageExtractor
                     string filepath = dt.Rows[k]["fullfilepath"].ToString();
                     
                     CurrentInputFilepath = filepath;
+
+                    ImagesExtractorHelper.uniqueImageSaver.ClearAfterUse();
 
                     string password = dt.Rows[k]["password"].ToString();
                     PageRange pagerange = (PageRange)dt.Rows[k]["pagerange"];
@@ -102,6 +109,10 @@ namespace PdfImageExtractor
                 {
                     err += ex.Message;
                 }
+                finally
+                {
+                    ImagesExtractorHelper.uniqueImageSaver.ClearAfterUse();
+                }
             }
 
             return err;
@@ -171,7 +182,9 @@ namespace PdfImageExtractor
                     reader = new PdfReader(filepath, Encoding.Default.GetBytes(password));
                 }
                 iTextSharp.text.pdf.parser.PdfReaderContentParser parser = new iTextSharp.text.pdf.parser.PdfReaderContentParser(reader);
-                MyImageRenderListener listener = new MyImageRenderListener(RESULT);
+                //3MyImageRenderListener listener = new MyImageRenderListener(RESULT);
+                NewMyImageRenderListener listener = new NewMyImageRenderListener(RESULT);
+
                 listener.add_to_one_pdf = add_to_one_pdf;
                 listener.PdfFile = System.IO.Path.GetFileName(filepath);
 
@@ -402,6 +415,8 @@ namespace PdfImageExtractor
             return false;
         }
 
+        public static UniqueImageSaver uniqueImageSaver = new UniqueImageSaver();
+
         public static string Convert(Image imgfile, string filepath, bool add_to_one_pdf)
         {
             //MessageBox.Show("TEST2");
@@ -414,30 +429,49 @@ namespace PdfImageExtractor
             DateTime dtcreated = fi.CreationTime;
             DateTime dtlastmod = fi.LastWriteTime;
 
-            if (!frmMain.Instance.chkBorder.Checked && !frmMain.Instance.chkCanvas.Checked && !frmMain.Instance.chkColorDepth.Checked
+            //imgfile = PDFImageManager.GetFixedInvertedImage(imgfile);
+
+            /*if (true && !frmMain.Instance.chkBorder.Checked && !frmMain.Instance.chkCanvas.Checked && !frmMain.Instance.chkColorDepth.Checked
                         && !frmMain.Instance.chkColorTransformations.Checked && !frmMain.Instance.chkCrop.Checked && !frmMain.Instance.chkFormat.Checked
                         && !frmMain.Instance.chkResize.Checked && !frmMain.Instance.chkResolution.Checked && !frmMain.Instance.chkRotateFlip.Checked
                         && !frmMain.Instance.chkText.Checked && !frmMain.Instance.chkWatermark.Checked
-                && !frmMain.Instance.chkNegative.Checked)
+                && !frmMain.Instance.chkNegative.Checked)*/
+            if (true)
             {
-                string newfilename2 = RenameHelper.GetNewFilename(filepath);
-                string newfilepath2 = System.IO.Path.GetDirectoryName(filepath) + "\\" + newfilename2;
+                try
+                {                    
+                    string newfilename2 = RenameHelper.GetNewFilename(filepath);
+                    string newfilepath2 = System.IO.Path.GetDirectoryName(filepath) + "\\" + newfilename2;
 
-                imgfile.Save(newfilepath2);
+                    //3imgfile = PDFImageManager.Convert(imgfile);
 
-                FileInfo fi2=new FileInfo(newfilepath2);
+                    //3imgfile = PDFImageManager.GetFixedInvertedImage(imgfile);
 
-                if (Properties.Settings.Default.KeepCreationDate)
-                {
-                    fi2.CreationTime = dtcreated;
+                    //Module.ShowMessage("save:" + newfilepath2);
+                    //3imgfile.Save(newfilepath2);
+
+                    FreeImageHelper.SaveBitmap(newfilepath2, (Bitmap)imgfile, FreeImageAPI.FREE_IMAGE_FORMAT.FIF_PNG);
+
+                    FileInfo fi2 = new FileInfo(newfilepath2);
+
+                    if (Properties.Settings.Default.KeepCreationDate)
+                    {
+                        fi2.CreationTime = dtcreated;
+                    }
+
+                    if (Properties.Settings.Default.KeepLastModificationDate)
+                    {
+                        fi2.LastWriteTime = dtlastmod;
+                    }
+
+                    uniqueImageSaver.ImageIsUnique(imgfile, newfilepath2);
+
+                    return "";
                 }
-
-                if (Properties.Settings.Default.KeepLastModificationDate)
+                catch (Exception ex1)
                 {
-                    fi2.LastWriteTime = dtlastmod;
+                    Module.ShowError(ex1);
                 }
-
-                return "";
             }
 
             try
@@ -445,6 +479,15 @@ namespace PdfImageExtractor
                 tmpfile = System.IO.Path.GetTempFileName();
                 imgfile.Save(tmpfile);
 
+                string tmpfile2 = System.IO.Path.GetTempFileName();
+                imgfile.Save(tmpfile2);
+                uniqueImageSaver.tempImageFiles.Add(tmpfile2);
+
+                if (!uniqueImageSaver.ImageIsUnique(imgfile, tmpfile2))
+                {
+                    return "";
+                }
+                    
                 LoadImageReturn lr = null;
 
                 try
@@ -463,7 +506,6 @@ namespace PdfImageExtractor
                 //System.Drawing.Imaging.PixelFormat pif = img.PixelFormat;
                 //System.Drawing.Imaging.ImageFormat pif = img.RawFormat;
 
-
                 try
                 {
 
@@ -478,8 +520,6 @@ namespace PdfImageExtractor
                             frmResize.Instance.Percentage, frmResize.Instance.Inches, frmResize.Instance.Cm,
                             frmResize.Instance.Points);
                     }
-
-
 
                     if (frmMain.Instance.chkResolution.Checked)
                     {
@@ -504,7 +544,6 @@ namespace PdfImageExtractor
     frmCrop.Instance.Percentage, frmCrop.Instance.Inches, frmCrop.Instance.Cm, frmCrop.Instance.Points);
 
                     }
-
 
                     if (frmMain.Instance.chkCanvas.Checked)
                     {
@@ -853,26 +892,29 @@ namespace PdfImageExtractor
             {
             }
 
-            /**
-             * @see com.itextpdf.text.pdf.parser.RenderListener#renderImage(
-             *     com.itextpdf.text.pdf.parser.ImageRenderInfo)
-             */
-            public void RenderImage(iTextSharp.text.pdf.parser.ImageRenderInfo renderInfo)
+        /**
+         * @see com.itextpdf.text.pdf.parser.RenderListener#renderImage(
+         *     com.itextpdf.text.pdf.parser.ImageRenderInfo)
+         */
+        public void RenderImage(iTextSharp.text.pdf.parser.ImageRenderInfo renderInfo)
+        {
+            try
             {
-                try
+                String filename = path;
+
+                PdfImageObject image = renderInfo.GetImage();
+                PdfName filter = (PdfName)image.Get(PdfName.FILTER);
+
+                if (image == null) return;
+
+                if (filter != null)
                 {
-                    String filename = path;
 
-                    PdfImageObject image = renderInfo.GetImage();
-                    PdfName filter = (PdfName)image.Get(PdfName.FILTER);
-
-                    if (image == null) return;
-
-                    if (filter != null)
-                    {
                     System.Drawing.Image drawingImage = image.GetDrawingImage();
 
-                        if (drawingImage==null) return;
+                    byte[] imgb = image.GetImageAsBytes();
+
+                    if (drawingImage == null) return;
 
                     //3string extension = ".";
 
@@ -898,7 +940,7 @@ namespace PdfImageExtractor
                      * BitMapData scan lines in various formats (like virtually every sample I’ve found
                      * online), use the PdfImageObject.GetDrawingImage() method, which does the work for us. */
                     //3this.Images.Add(drawingImage, extension);
-                    
+
                     /*
                     System.IO.MemoryStream os;
                     iTextSharp.text.pdf.parser.PdfImageObject image = renderInfo.GetImage();
@@ -929,24 +971,26 @@ namespace PdfImageExtractor
                     {
                         //3img.Save(System.IO.Path.GetTempPath() + "\\pdfimageextractor.png");
 
-                        drawingImage.Save(System.IO.Path.GetTempPath() + "\\pdfimageextractor"+"."+extension);
+                        drawingImage.Save(System.IO.Path.GetTempPath() + "\\pdfimageextractor" + "." + extension);
 
                     }
                     else
                     {
                         //3ImagesExtractorHelper.Convert(img, filename, add_to_one_pdf);
 
-                        ImagesExtractorHelper.Convert(drawingImage, filename, add_to_one_pdf);
+                        ImagesExtractorHelper.Convert(drawingImage, filename, add_to_one_pdf);                        
+
+                        //3System.IO.File.WriteAllBytes(filename, imgb);
                     }
 
                     //3os.Close();
-                    }
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
                 }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
 
             /**
              * @see com.itextpdf.text.pdf.parser.RenderListener#renderText(
@@ -1021,13 +1065,18 @@ namespace PdfImageExtractor
 
                     Image img = Image.FromStream(os);
 
+                    /*
+                    byte[] imgb = image.GetImageAsBytes();
+                    System.IO.File.WriteAllBytes(filename, imgb);
+                    */
+
                     if (for_preview_page_extract)
                     {
                         img.Save(System.IO.Path.GetTempPath() + "\\pdfimageextractor.png");
 
                     }
                     else
-                    {
+                    {                         
                         ImagesExtractorHelper.Convert(img, filename, add_to_one_pdf);
                     }
 

@@ -20,11 +20,11 @@ namespace PdfImageExtractor
 
                 try
                 {
-                    key2 = key.OpenSubKey("4dots Software", true);
+                    key2 = key.OpenSubKey("softpcapps Software", true);
 
                     if (key2 == null)
                     {
-                        key2 = key.CreateSubKey("4dots Software");
+                        key2 = key.CreateSubKey("softpcapps Software");
                     }
 
                     RegistryKey key3 = key2.OpenSubKey(AppRegKey, true);
@@ -89,11 +89,11 @@ namespace PdfImageExtractor
 
             try
             {
-                key2 = key.OpenSubKey("4dots Software", true);
+                key2 = key.OpenSubKey("softpcapps Software", true);
 
                 if (key2 == null)
                 {
-                    key2 = key.CreateSubKey("4dots Software");
+                    key2 = key.CreateSubKey("softpcapps Software");
                 }
 
                 RegistryKey key3 = key2.OpenSubKey(AppRegKey, true);

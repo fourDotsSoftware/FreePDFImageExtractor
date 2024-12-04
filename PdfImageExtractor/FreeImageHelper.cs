@@ -21,8 +21,10 @@ namespace PdfImageExtractor
             // Safely unload to prevent memory leak.
             FreeImage.UnloadEx(ref dib);
 
+            FREE_IMAGE_FORMAT fmt = FREE_IMAGE_FORMAT.FIF_JPEG;
+
             // Load the example bitmap.
-            dib = FreeImage.LoadEx(filepath);
+            dib = FreeImage.LoadEx(filepath, FREE_IMAGE_LOAD_FLAGS.JPEG_CMYK, ref fmt);
 
             // Check whether loading succeeded.
             if (dib.IsNull)
@@ -63,7 +65,17 @@ namespace PdfImageExtractor
 
             // Load the example bitmap.
             dib = FreeImage.LoadEx(filepath);
-                        
+
+            FREE_IMAGE_FORMAT fmt = FREE_IMAGE_FORMAT.FIF_RAW;
+
+            dib = FreeImage.LoadEx(filepath, ref fmt);
+
+            //FREE_IMAGE_FORMAT fmt = FREE_IMAGE_FORMAT.FIF_JPEG;
+
+            //dib = FreeImage.LoadEx(filepath, FREE_IMAGE_LOAD_FLAGS.JPEG_CMYK, ref fmt);
+
+            //dib = FreeImage.ConvertColorDepth(dib, FREE_IMAGE_COLOR_DEPTH.FICD_AUTO);
+
             // Check whether loading succeeded.
             if (dib.IsNull)
             {
@@ -85,8 +97,8 @@ namespace PdfImageExtractor
             return bitmap;
         }
 
-        public static void SaveBitmap(string filepath, Bitmap img,FREE_IMAGE_FORMAT fmt)
-        {            
+        public static void SaveBitmap(string filepath, Bitmap img, FREE_IMAGE_FORMAT fmt)
+        {
             if (filepath.ToLower().EndsWith(".png"))
             {
                 Color c = img.GetPixel(0, 0);
@@ -97,14 +109,32 @@ namespace PdfImageExtractor
             else if (filepath.ToLower().EndsWith(".gif"))
             {
                 Color c2 = img.GetPixel(0, 0);
-                img=ChangeFormatHelper.MakeTransparentGif(img,c2);
+                img = ChangeFormatHelper.MakeTransparentGif(img, c2);
                 img.Save(filepath, ImageFormat.Gif);
             }
             else if (filepath.ToLower().EndsWith(".ico"))
-            {                                    
-                    Color c3 = img.GetPixel(0, 0);
-                    img.MakeTransparent(c3);
-                    IconHelper.SaveAsIcon(filepath, img);
+            {
+                Color c3 = img.GetPixel(0, 0);
+                img.MakeTransparent(c3);
+                IconHelper.SaveAsIcon(filepath, img);
+            }
+            else if (filepath.ToLower().EndsWith(".jpg") || filepath.ToLower().EndsWith(".jpeg"))
+            {
+                ImageCodecInfo jgpEncoder = GetEncoder(ImageFormat.Jpeg);
+
+                System.Drawing.Imaging.Encoder myEncoder =
+                System.Drawing.Imaging.Encoder.Quality;
+
+                // Create an EncoderParameters object.
+                // An EncoderParameters object has an array of EncoderParameter
+                // objects. In this case, there is only one
+                // EncoderParameter object in the array.
+                EncoderParameters myEncoderParameters = new EncoderParameters(1);
+
+                EncoderParameter myEncoderParameter = new EncoderParameter(myEncoder, 100);
+
+                myEncoderParameters.Param[0] = myEncoderParameter;
+                img.Save(filepath, jgpEncoder, myEncoderParameters);
             }
             else
             {
@@ -145,10 +175,26 @@ namespace PdfImageExtractor
 
 
                 //img.MakeTransparent(Color.White);
-                                
-                FreeImage.SaveBitmap(img, filepath, fmt, FREE_IMAGE_SAVE_FLAGS.DEFAULT);
+
+                //3FreeImage.SaveBitmap(img, filepath, fmt, FREE_IMAGE_SAVE_FLAGS.DEFAULT);
+
+                FreeImage.SaveBitmap(img, filepath, FREE_IMAGE_FORMAT.FIF_PNG, FREE_IMAGE_SAVE_FLAGS.DEFAULT);
             }
         }
+
+        private static ImageCodecInfo GetEncoder(ImageFormat format)
+        {
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
+            foreach (ImageCodecInfo codec in codecs)
+            {
+                if (codec.FormatID == format.Guid)
+                {
+                    return codec;
+                }
+            }
+            return null;
+        }
+
     }
 
     public class LoadImageReturn

@@ -19,7 +19,8 @@ namespace PdfImageExtractor
 
             // new
             if (Module.args.Length > 0 && (Module.args[0].ToLower().Trim().Contains("-tempfile:")
-                || System.IO.File.Exists(Module.args[0]) || System.IO.Directory.Exists(Module.args[0])))
+            //    || System.IO.File.Exists(Module.args[0]) || System.IO.Directory.Exists(Module.args[0])
+            ))
             {                
                 return false;
             }
@@ -40,6 +41,8 @@ namespace PdfImageExtractor
                 if (args[0].ToLower().StartsWith("-tempfile:"))
                 {
                     FromWindowsExplorer = true;
+
+                    Module.IsFromWindowsExplorer = true;
 
                     string tempfile = GetParameter(args[0]);
 
@@ -82,6 +85,8 @@ namespace PdfImageExtractor
 
 
                 //Module.args = SplitArguments(commandline);
+
+                Module.IsCommandLine = true;
 
                 for (int k = 0; k < Module.args.Length; k++)
                 {
@@ -165,6 +170,8 @@ namespace PdfImageExtractor
 
             if (frmMain.Instance.dt.Rows.Count > 0)
             {
+                Module.ShowMessage("\n\nPlease wait while Extracting Images from PDF...");
+
                 string err=ImagesExtractorHelper.ExtractImages(frmMain.Instance.dt,frmMain.Instance.rdDocumentsFolder.Checked,frmMain.Instance.rdDocumentsFolder.Text,frmMain.Instance.chkFormat.Checked,frmChangeFormat.Instance.SelectedFormat,frmMain.Instance.txtFilename.Text);
 
                 if (err == String.Empty)
@@ -177,7 +184,10 @@ namespace PdfImageExtractor
                     Module.ShowMessage("Error" + "\r\n" + err);
                 }
             }
-
+            else
+            {
+                Module.ShowMessage("\n\nPlease specify at least one PDF file !");
+            }
             return true;
         }
 

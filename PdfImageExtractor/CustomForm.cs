@@ -19,9 +19,9 @@ namespace PdfImageExtractor
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.ResizeRedraw = true;
 
-            
+
             //this.Icon = new Icon(System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("FreePDFPasswordRemover.Properties.pdfnew48arrowb.ico"));
-            this.Icon = Properties.Resources.pdf_image_extractor;
+            this.Icon = Properties.Resources.pdf_photo_48;
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)

@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Free PDF Image Extractor 4dots")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("4dots Software")]
+[assembly: AssemblyCompany("softpcapps Software")]
 [assembly: AssemblyProduct("Free PDF Image Extractor 4dots")]
-[assembly: AssemblyCopyright("Copyright © 4dots Software 2012")]
+[assembly: AssemblyCopyright("Copyright © softpcapps Software 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("3.0.0.0")]
+[assembly: AssemblyFileVersion("3.0.0.0")]

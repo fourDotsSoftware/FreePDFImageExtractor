@@ -51,7 +51,7 @@ namespace PdfImageExtractor
             {
                 RegistryKey key = Registry.CurrentUser;
 
-                key = key.OpenSubKey(@"Software\4dots Software\ImgTransformer", false);
+                key = key.OpenSubKey(@"Software\softpcapps Software\ImgTransformer", false);
                 nudWS = int.Parse(key.GetValue("SmallW", "800").ToString());
                 nudHS = int.Parse(key.GetValue("SmallH", "600").ToString());
                 nudWM = int.Parse(key.GetValue("MediumW", "1024").ToString());

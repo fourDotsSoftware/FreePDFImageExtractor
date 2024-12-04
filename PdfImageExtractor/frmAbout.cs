@@ -23,15 +23,11 @@ namespace PdfImageExtractor
         {
             lblAbout.Text = Module.ApplicationTitle + "\n\n" +
             "Developed by Alexander Triantafyllou\n" +
-            "Copyright 2012 - 4dots Software\n" +
-            "http://www.4dots-software.com\n\n";
+            "Copyright 2012 - softpcapps Software\n" +
+            "http://softpcapps.com\n\n";
             //lblAdeia.Text = "FREE FOR NON COMMERCIAL USE ONLY !";
-                        
-            if (LDT != String.Empty)
-            {
-                lblAdeia.Text = "Licensed To : " + LDT;
 
-            }                       
+            pictureBox1.Image = this.Icon.ToBitmap();
         }
 
         protected override void OnPaintBackground(PaintEventArgs e)
